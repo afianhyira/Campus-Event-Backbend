@@ -73,21 +73,19 @@ const app = express();
 //     }
 //   },
 // };
-var corsOptions = {
-  origin: [
-    "https://campusevents-five.vercel.app/",
-    "http://localhost:5173/",
-    "http://campusevents-five.vercel.app/",
-  ],
-  // optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204,
-  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true,
-};
+// var corsOptions = ;
 
 // Middleware
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "https://campusevents-five.vercel.app",
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204,
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 
 // Routes
 app.use("/api/auth", authRoutes);
