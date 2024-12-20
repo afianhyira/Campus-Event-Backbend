@@ -74,8 +74,15 @@ var corsOptions = {
   },
 };
 var corsOptions = {
-  origin: ["https://campusevents-five.vercel.app/", "http://localhost:5173"],
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  credentials: true,
+  origin: [
+    "https://campusevents-five.vercel.app/",
+    "http://localhost:5173",
+    "https://campusevents-five.vercel.app/",
+  ],
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+  // allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 // Middleware
