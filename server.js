@@ -60,23 +60,23 @@ connectDB();
 
 const app = express();
 
-var whitelist = [
-  "https://campusevents-five.vercel.app/events",
-  "http://campusevents-five.vercel.app/events",
-];
-var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-};
+// var whitelist = [
+//   "https://campusevents-five.vercel.app/events/*",
+//   "http://campusevents-five.vercel.app/events/*",
+// ];
+// var corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+// };
 var corsOptions = {
   origin: [
     "https://campusevents-five.vercel.app/*",
-    "http://localhost:5173",
+    "http://localhost:5173/*",
     "http://campusevents-five.vercel.app/*",
   ],
   // optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204,
