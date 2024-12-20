@@ -81,8 +81,8 @@ var corsOptions = {
     "https://campusevents-five.vercel.app/",
   ],
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-  // allowedHeaders: ["Content-Type", "Authorization"],
+  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 // Middleware
